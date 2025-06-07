@@ -1,0 +1,8 @@
+server:
+  port: 9114
+  servlet:
+    context-path: /swe
+
+spring:
+  application:
+    name: SearchWithElastic
