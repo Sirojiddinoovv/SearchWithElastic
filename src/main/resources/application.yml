@@ -6,3 +6,5 @@ server:
 spring:
   application:
     name: SearchWithElastic
+  elasticsearch:
+    uris: http://185.191.141.83:9200

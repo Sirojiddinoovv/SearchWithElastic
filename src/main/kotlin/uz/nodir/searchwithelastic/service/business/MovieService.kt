@@ -14,4 +14,6 @@ import uz.nodir.searchwithelastic.model.dto.MovieCreateRequestDTO
 interface MovieService {
 
     fun createMovie(requestDTO: MovieCreateRequestDTO): MovieBaseResponseDTO
+
+    fun findByName(name: String): List<MovieBaseResponseDTO>
 }

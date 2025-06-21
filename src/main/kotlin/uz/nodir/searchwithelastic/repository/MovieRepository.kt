@@ -14,8 +14,18 @@ import java.util.*
  **/
 
 
-interface MovieRepository: ElasticsearchRepository<Movie, UUID> {
+interface MovieRepository : ElasticsearchRepository<Movie, UUID> {
 
-    @Query("{\"match\": {\"title\": {\"query\": \"?0\"}}}")
+    @Query(
+        """
+{
+  "match_phrase_prefix": {
+    "title": {
+      "query": "?0"
+    }
+  }
+}
+"""
+    )
     fun searchByTitleCustom(query: String?): List<Movie>
 }

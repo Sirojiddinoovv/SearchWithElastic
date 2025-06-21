@@ -35,4 +35,16 @@ class MovieServiceImpl(
         log.info("Finished command to create movie with response dto: $response")
         return response
     }
+
+    override fun findByName(name: String): List<MovieBaseResponseDTO> {
+        log.info("Received command to find movie by name: $name")
+
+        val response = dao.findByName(name)
+            .map(MovieBaseResponseDTO::from)
+
+        log.info("Finished command to find movie by name with response dto: $response")
+        return response
+    }
+
+
 }
